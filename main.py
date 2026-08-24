@@ -3,38 +3,47 @@ from projects.projects import PROJECTS
 
 
 def show_profile():
-    print("\n" + "=" * 45)
-    print("             THARUN'S PROFILE")
-    print("=" * 45)
+    print("\n" + "=" * 50)
+    print("                  THARUN'S PROFILE")
+    print("=" * 50)
     print(f"Name     : {NAME}")
     print(f"Role     : {ROLE}")
     print("Focus    : " + " • ".join(FOCUS))
-    print("=" * 45)
+    print("=" * 50)
 
 
 def show_projects():
-    print("\n" + "=" * 45)
-    print("              PROJECTS")
-    print("=" * 45)
+    print("\n" + "=" * 50)
+    print("                  PROJECTS")
+    print("=" * 50)
 
     for number, project in enumerate(PROJECTS, start=1):
-        print(f"{number}. {project['name']}")
-        print(f"   {project['description']}")
-        print(f"   Status: {project['status']}")
-        print()
+        print(f"\n{number}. {project['name']}")
+        print(f"   Description : {project['description']}")
+        print(f"   Status      : {project['status']}")
 
-    print("=" * 45)
+        print("   Technologies:")
+        for technology in project["technologies"]:
+            print(f"      • {technology}")
+
+        print("   What I learned:")
+        for lesson in project["learned"]:
+            print(f"      • {lesson}")
+
+        print(f"   Next        : {project['next']}")
+
+    print("\n" + "=" * 50)
 
 
 def main():
     while True:
-        print("\n" + "=" * 45)
-        print("              THARUN")
-        print("=" * 45)
+        print("\n" + "=" * 50)
+        print("                    THARUN")
+        print("=" * 50)
         print("1. View Profile")
         print("2. View Projects")
         print("3. Exit")
-        print("=" * 45)
+        print("=" * 50)
 
         choice = input("Choose an option: ")
 
