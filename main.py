@@ -34,7 +34,58 @@ def show_projects():
 
     print("\n" + "=" * 50)
 
+def explore_project():
+    print("\n" + "=" * 50)
+    print("              EXPLORE PROJECT")
+    print("=" * 50)
 
+    print("\nAvailable Projects:")
+
+    for project in PROJECTS:
+        print(f"{project['id']}. {project['name']}")
+
+    print("=" * 50)
+
+    choice = input("Choose a project (or press Enter to go back): ")
+
+    if choice == "":
+        return
+
+    if not choice.isdigit():
+        print("\nPlease enter a valid number.")
+        return
+
+    project_id = int(choice)
+
+    selected_project = None
+
+    for project in PROJECTS:
+        if project["id"] == project_id:
+            selected_project = project
+            break
+
+    if selected_project is None:
+        print("\nProject not found.")
+        return
+
+    print("\n" + "=" * 50)
+    print(f"              {selected_project['name']}")
+    print("=" * 50)
+
+    print(f"\nDescription : {selected_project['description']}")
+    print(f"Status      : {selected_project['status']}")
+
+    print("\nTechnologies:")
+    for technology in selected_project["technologies"]:
+        print(f"  • {technology}")
+
+    print("\nWhat I learned:")
+    for lesson in selected_project["learned"]:
+        print(f"  • {lesson}")
+
+    print(f"\nNext        : {selected_project['next']}")
+
+    print("\n" + "=" * 50)
 def main():
     while True:
         print("\n" + "=" * 50)
@@ -42,7 +93,9 @@ def main():
         print("=" * 50)
         print("1. View Profile")
         print("2. View Projects")
-        print("3. Exit")
+        print("3. Explore a Project")
+        print("4. Exit")
+
         print("=" * 50)
 
         choice = input("Choose an option: ")
@@ -52,6 +105,8 @@ def main():
         elif choice == "2":
             show_projects()
         elif choice == "3":
+            explore_project()
+        elif choice == "4":
             print("\nThanks for visiting. Keep building. 🚀")
             break
         else:

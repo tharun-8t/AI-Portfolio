@@ -1,6 +1,7 @@
 PROJECTS = [
     {
-        "name": "AI-Portfolio",
+  "id": 1,
+"name": "AI-Portfolio",
         "description": "My first personal project built while learning Python, Git, and GitHub.",
         "status": "In Development",
         "technologies": ["Python", "Git", "GitHub"],
