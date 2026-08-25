@@ -556,3 +556,42 @@ body.page-loaded {
     background: #fff;
     margin-top: 4px;
 }
+/* ---------- MOBILE MENU ---------- */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+        min-width: 150px;
+        background: #0c0c0c;
+        border: 1px solid #292929;
+        border-radius: 12px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+}
