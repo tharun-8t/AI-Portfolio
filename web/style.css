@@ -190,8 +190,43 @@ footer {
 /* ---------- HERO ---------- */
 
 .hero {
+    position: relative;
     min-height: 100vh;
     padding-top: 120px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.08),
+        transparent 70%
+    );
+    filter: blur(20px);
+    animation: heroGlow 6s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes heroGlow {
+    from {
+        transform: translate(-180px, -80px) scale(0.9);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translate(180px, 80px) scale(1.1);
+        opacity: 1;
+    }
 }
 
 .hero-label {
