@@ -450,3 +450,34 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* ---------- ABOUT ---------- */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-content h2 {
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.about-text {
+    padding-top: 8px;
+}
+
+.about-text p {
+    margin-bottom: 25px;
+    font-size: 17px;
+    color: #999;
+}
+
+@media (max-width: 700px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
