@@ -34,6 +34,7 @@ def show_projects():
 
     print("\n" + "=" * 50)
 
+
 def explore_project():
     print("\n" + "=" * 50)
     print("              EXPLORE PROJECT")
@@ -51,11 +52,11 @@ def explore_project():
     if choice == "":
         return
 
-    if not choice.isdigit():
-        print("\nPlease enter a valid number.")
+    try:
+        project_id = int(choice)
+    except ValueError:
+        print("\nInvalid choice.")
         return
-
-    project_id = int(choice)
 
     selected_project = None
 
@@ -86,6 +87,8 @@ def explore_project():
     print(f"\nNext        : {selected_project['next']}")
 
     print("\n" + "=" * 50)
+
+
 def main():
     while True:
         print("\n" + "=" * 50)
@@ -95,22 +98,25 @@ def main():
         print("2. View Projects")
         print("3. Explore a Project")
         print("4. Exit")
-
         print("=" * 50)
 
         choice = input("Choose an option: ")
 
         if choice == "1":
             show_profile()
+
         elif choice == "2":
             show_projects()
+
         elif choice == "3":
             explore_project()
+
         elif choice == "4":
             print("\nThanks for visiting. Keep building. 🚀")
             break
+
         else:
-            print("\nInvalid option. Please choose 1, 2, or 3.")
+            print("\nInvalid option. Please try again.")
 
 
 if __name__ == "__main__":
