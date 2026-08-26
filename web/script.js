@@ -91,6 +91,19 @@ const projects = [
             "CSS"
         ],
         github: "https://github.com/tharun-8t/AI-Portfolio"
+    },
+        {
+        id: 2,
+        name: "Student Expense Tracker",
+        description:
+            "A simple project for recording and organizing daily student expenses.",
+        status: "PLANNED",
+        technologies: [
+            "Python",
+            "Data Handling",
+            "Git"
+        ],
+        github: "https://github.com/tharun-8t/AI-Portfolio"
     }
 ];
 
