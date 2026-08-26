@@ -74,3 +74,66 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+// ---------- PROJECT DATA ----------
+
+const projects = [
+    {
+        id: 1,
+        name: "AI-Portfolio",
+        description:
+            "A personal portfolio system built while learning Python, Git, GitHub, HTML, and CSS.",
+        status: "IN DEVELOPMENT",
+        technologies: [
+            "Python",
+            "Git",
+            "GitHub",
+            "HTML",
+            "CSS"
+        ],
+        github: "https://github.com/tharun-8t/AI-Portfolio"
+    }
+];
+
+const projectsContainer = document.querySelector("#projects-container");
+
+if (projectsContainer) {
+    projects.forEach((project) => {
+
+        const card = document.createElement("article");
+        card.className = "project-card";
+
+        card.innerHTML = `
+            <div class="project-top">
+                <span class="project-number">
+                    ${String(project.id).padStart(2, "0")}
+                </span>
+
+                <span class="project-status">
+                    ${project.status}
+                </span>
+            </div>
+
+            <h3>${project.name}</h3>
+
+            <p>
+                ${project.description}
+            </p>
+
+            <div class="project-tech">
+                ${project.technologies
+                    .map((technology) => `<span>${technology}</span>`)
+                    .join("")}
+            </div>
+
+            <a
+                href="${project.github}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link">
+                View on GitHub →
+            </a>
+        `;
+
+        projectsContainer.appendChild(card);
+    });
+}
